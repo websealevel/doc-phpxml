@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<theme_official_plugins xmlns="https://websealevel.com/wsl/theme-dependencies">
+    <theme name="atelierduboisdor">
+        <plugins>
+            <plugin>
+                <name>ewww-image-optimizer</name>
+                <label>EWWW Image Optimizer</label>
+                <path>ewww-image-optimizer/ewww-image-optimizer.php</path>
+                <description>Optimisation des images uploadées</description>
+                <official_link>https://wordpress.org/plugins/ewww-image-optimizer/</official_link>
+            </plugin>
+        </plugins>
+    </theme>
+</theme_official_plugins>
