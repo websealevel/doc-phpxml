@@ -3,7 +3,7 @@
 
 $xml = simplexml_load_file('data.xml');
 
-var_dump($xml);
+// var_dump($xml);
 
 //Acceder au premier element du document par indice
 // var_dump($xml->theme[0]->plugins);
@@ -14,5 +14,9 @@ var_dump($xml);
 // }
 
 //Selectionne les noeuds 'theme' enfant du noeud courant
-$plugins = $xml->xpath("theme");
+$plugins = $xml->xpath("theme_official_plugins/theme");
+var_dump($plugins);
+
+//Selectionne le noeud 'theme' dont l'attribut name vaut atelierduboisdor, enfant du noeud courant
+$plugins = $xml->xpath('theme_official_plugins/theme[@name="atelierduboisdor"]');
 var_dump($plugins);

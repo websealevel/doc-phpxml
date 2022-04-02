@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<theme_official_plugins xmlns="https://websealevel.com/wsl/theme-dependencies">
+<theme_official_plugins xmlns="https://websealevel.com/wordpress/plugins/wsl_theme_dependencies">
     <theme name="atelierduboisdor">
         <plugins>
             <plugin>

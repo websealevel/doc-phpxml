@@ -15,7 +15,9 @@ Xpath execute des requetes sur un document XML. Les fonctions built-in de Xpath 
 
 ## Ressources
 
+- [Site officiel XML](https://www.xml.com/)
 - [PHP SimpleXML - Get Node/Attribute Values](https://www.w3schools.com/php/php_xml_simplexml_get.asp)
 - [SimpleXMLElement::xpath](https://www.php.net/manual/en/simplexmlelement.xpath.php)
 - [XPath tutorial](https://www.w3schools.com/xml/xpath_intro.asp)
 - [PHP xpath() Function](https://www.w3schools.com/php/func_simplexml_xpath.asp)
+- [Ultimate XPath Writing Cheat Sheet Tutorial with Syntax and Examples](https://www.softwaretestinghelp.com/xpath-writing-cheat-sheet-tutorial-examples/)
