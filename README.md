@@ -7,14 +7,42 @@ Documentation et exemples sur la manipulation de XML en php
 
 Le document XML a une racine, c'est un graphe, comme un document HTML. Dans `data.xml`, notre fichier de données d'exemple, la root du document est `theme_official_plugins`.
 
-# DTD
+# Valider le XML avec un DTD
 
-Le [DTD](https://www.xml.com/pub/a/norm/part1/getstart1.html#xmlinidtd) est un fichier de documentation pour les données xml.
+Le [DTD](https://www.xml.com/pub/a/norm/part1/getstart1.html#xmlinidtd) est un fichier de documentation pour les données xml. Il peut etre interne au fichier XML mais généralement on le met dans un fichier externe. On le référence depuis le fichier XML qu'il décrit en introduisant cette balise dans le fichier XML
+
+~~~xml
+<!DOCTYPE root_element SYSTEM "{fichier.dtd}">
+~~~
+
+~~~php
+$xml_file = 'data.xml';
+$dom = new DOMDocument();
+$dom->load($xml_file);
+if ($dom->validate()) {
+    echo "Le document XML " . $xml_file . " est valide." . PHP_EOL;
+}
+~~~
 
 ## XPath query
 
 Xpath execute des requetes sur un document XML. Les fonctions built-in de Xpath cherche dans la node SimpleXML une node enfant qui match l'expression XPath.
 
+Exemple avec la node root qui dispose d'un attribut namespace `xmlns`, généralement une URI pour assurer l'unicité.
+
+~~~xml
+<root xmlns="mon-namespace">
+~~~
+
+~~~php
+$dom = new DOMDocument();
+$dom->load($xml_file);
+$xpath = new DOMXpath($dom);
+$xpath->registerNamespace('ns', 'mon-namespace')
+$results = $xpath->query('//ns:root/ns:child');
+~~~
+
+Le résultat renvoyé par `$xpath->query()` est un objet [DOMElement](https://www.php.net/manual/en/class.domelement.php).
 
 
 ## Ressources

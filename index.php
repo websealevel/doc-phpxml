@@ -8,6 +8,9 @@ $xml_file = 'data.xml';
 //On cree une abstraction du DOM
 $dom = new DOMDocument();
 
+//Remove redundant white spaces
+$dom->preserveWhiteSpace = false;
+
 //On valide le XML avec le DTD
 $dom->load($xml_file);
 if ($dom->validate()) {
@@ -22,10 +25,10 @@ $xpath->registerNamespace('ns', 'https://websealevel.com/wordpress/plugins/wsl_t
 //Query
 
 //Selectionne le noeud 'theme' dont l'attribut name vaut atelierduboisdor, enfant du noeud courant
-$themes = $xpath->query('//ns:theme_official_plugins/ns:theme');
+$results = $xpath->query('//ns:theme_official_plugins/ns:theme');
 
 //Exploite les résultats
 
-foreach($themes as $theme){
-    var_dump($theme);
+foreach($results as $result){
+    var_dump($result);
 }
