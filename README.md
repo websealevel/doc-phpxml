@@ -41,11 +41,29 @@ $dom = new DOMDocument();
 $dom->load($xml_file);
 $xpath = new DOMXpath($dom);
 $xpath->registerNamespace('ns', 'mon-namespace')
-$results = $xpath->query('//ns:root/ns:foo');
+$results = $xpath->evaluate('//ns:root/ns:foo');
 ~~~
 
-Le résultat renvoyé par `$xpath->query()` est une [DOMNodeList](), chaque item de la liste est un [DOMElement](https://www.php.net/manual/en/class.domelement.php).
+Le résultat renvoyé par `$xpath->query()` est une [DOMNodeList](), chaque item de la liste est un [DOMNode](https://www.php.net/manual/en/class.domnode.php). [DOMElement](https://www.php.net/manual/en/class.domelement.php) hérite de DOMNode. Comme on utilise DOMXPath il nous renvoie une DOMNodeList de DOMElement, on peut donc utiliser les méthodes de DOMElement qui sont très completes pour parser les résultats de la requête.
 
+Parcourir la liste avec les itérateurs, plus efficace,
+
+~~~php
+$node = $results->item(0);
+if (!isset($node))
+    return;
+do {
+    echo "name= " . $node->getAttribute('name') . PHP_EOL;
+} while ($node = $node->nextSibling);
+~~~
+
+ou sinon
+
+~~~php
+foreach ($results as $result) {
+    echo "name= " . $result->getAttribute('name') . PHP_EOL;
+}
+~~~
 
 ## Ressources
 

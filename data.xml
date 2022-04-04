@@ -2,25 +2,22 @@
 <!DOCTYPE theme_official_plugins SYSTEM "data.dtd">
 <theme_official_plugins xmlns="https://websealevel.com/wordpress/plugins/wsl_theme_dependencies">
     <theme name="atelierduboisdor">
-        <plugins>
-            <plugin>
-                <name>ewww-image-optimizer</name>
-                <label>EWWW Image Optimizer</label>
-                <path>ewww-image-optimizer/ewww-image-optimizer.php</path>
-                <description>Optimisation des images uploadées</description>
-                <official_link>https://wordpress.org/plugins/ewww-image-optimizer/</official_link>
-            </plugin>
-            <plugin>
-                <name>ewww-image-optimizer2</name>
-                <label>EWWW Image Optimizer2</label>
-                <path>ewww-image-optimizer/ewww-image-optimizer2.php</path>
-                <description>Optimisation des images uploadées ++</description>
-                <official_link>https://wordpress.org/plugins/ewww-image-optimizer2/</official_link>
-            </plugin>
-        </plugins>
+        <plugin>
+            <name>ewww-image-optimizer</name>
+            <label>EWWW Image Optimizer</label>
+            <path>ewww-image-optimizer/ewww-image-optimizer.php</path>
+            <description>Optimisation des images uploadées</description>
+            <official_link>https://wordpress.org/plugins/ewww-image-optimizer/</official_link>
+        </plugin>
+        <plugin>
+            <name>ewww-image-optimizer2</name>
+            <label>EWWW Image Optimizer2</label>
+            <path>ewww-image-optimizer/ewww-image-optimizer2.php</path>
+            <description>Optimisation des images uploadées ++</description>
+            <official_link>https://wordpress.org/plugins/ewww-image-optimizer2/</official_link>
+        </plugin>
     </theme>
     <theme name="foobar">
-        <plugins>
             <plugin>
                 <name>foo</name>
                 <label>Foo</label>
@@ -28,6 +25,5 @@
                 <description>Affiche foo</description>
                 <official_link>https://wordpress.org/plugins/ewww-image-optimizer/</official_link>
             </plugin>
-        </plugins>
     </theme>
 </theme_official_plugins>

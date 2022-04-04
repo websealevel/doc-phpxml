@@ -1,8 +1,7 @@
 <!ELEMENT theme_official_plugins (theme*) >
-<!ELEMENT theme (plugins*)>
+<!ELEMENT theme (plugin*)>
 <!ATTLIST theme_official_plugins xmlns CDATA #REQUIRED >
 <!ATTLIST theme name CDATA #REQUIRED >
-<!ELEMENT plugins (plugin*) >
 <!ELEMENT plugin (name,label,path,description,official_link) >
 <!ELEMENT name (#PCDATA) >
 <!ELEMENT label (#PCDATA) >
