@@ -68,6 +68,8 @@ foreach ($results as $result) {
 Exemple de requête
 
 ~~~php
+
+echo "Selectionne le noeud 'theme' dont l'attribut name vaut atelierduboisdor, enfant du noeud courant" . PHP_EOL;
 $plugins_list = $xpath->query('//ns:theme_official_plugins/ns:theme[@name="atelierduboisdor"]/ns:plugin');
 foreach($plugins_list as $plugin){
     echo $plugin->getElementsByTagName('name')->item(0)->nodeValue . PHP_EOL;
