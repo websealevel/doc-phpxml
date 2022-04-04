@@ -1,7 +1,16 @@
 <?php
 
+$xml_file = 'data.xml';
 
-$xml = simplexml_load_file('data.xml');
+
+//Validation du docment XML avec un DTD
+$dom = new DOMDocument();
+$dom->load($xml_file);
+if ($dom->validate()) {
+    echo "Le document XML " . $xml_file . " est valide." . PHP_EOL;
+}
+
+$xml = simplexml_load_file($xml_file);
 
 // var_dump($xml);
 

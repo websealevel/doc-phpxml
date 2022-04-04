@@ -1,4 +1,5 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='UTF-8'  standalone = "no"?>
+<!DOCTYPE theme_official_plugins SYSTEM "data.dtd">
 <theme_official_plugins xmlns="https://websealevel.com/wordpress/plugins/wsl_theme_dependencies">
     <theme name="atelierduboisdor">
         <plugins>

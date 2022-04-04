@@ -7,6 +7,10 @@ Documentation et exemples sur la manipulation de XML en php
 
 Le document XML a une racine, c'est un graphe, comme un document HTML. Dans `data.xml`, notre fichier de données d'exemple, la root du document est `theme_official_plugins`.
 
+# DTD
+
+Le [DTD](https://www.xml.com/pub/a/norm/part1/getstart1.html#xmlinidtd) est un fichier de documentation pour les données xml.
+
 ## XPath query
 
 Xpath execute des requetes sur un document XML. Les fonctions built-in de Xpath cherche dans la node SimpleXML une node enfant qui match l'expression XPath.
