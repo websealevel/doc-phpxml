@@ -65,6 +65,16 @@ foreach ($results as $result) {
 }
 ~~~
 
+Exemple de requête
+
+~~~php
+$plugins_list = $xpath->query('//ns:theme_official_plugins/ns:theme[@name="atelierduboisdor"]/ns:plugin');
+foreach($plugins_list as $plugin){
+    echo $plugin->getElementsByTagName('name')->item(0)->nodeValue . PHP_EOL;
+    echo $plugin->getElementsByTagName('description')->item(0)->nodeValue . PHP_EOL;
+}
+~~~
+
 ## Ressources
 
 - [Site officiel XML](https://www.xml.com/)

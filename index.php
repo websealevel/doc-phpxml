@@ -32,11 +32,10 @@ echo "Nombre de résultats matchant la requête : " . $results->count() . PHP_EO
 //Parcourir les résultats 
 foreach ($results as $result) {
     //$result est un DOMElement (suremement DOMXpath qui capte ça)
-    var_dump($result);
     echo "name= " . $result->getAttribute('name') . PHP_EOL;
 }
 
-//Parcourir les résultats de manière plus efficace
+//Parcourir les résultats de manière plus efficace. Par contre item renvoie un DOMNode et non un DOMElement. Mais ça passe quand même avec le polymorphisme
 $node = $results->item(0);
 if (!isset($node))
     return;
@@ -53,9 +52,9 @@ if (empty($list))
 echo "Nombre de résultats matchant la requête : " . $list->count() . PHP_EOL;
 
 // //Parcourir les résultats 
-foreach ($list as $item) {
+foreach ($list as $element) {
 
-    $plugins = $item->childNodes;
+    $plugins = $element->childNodes;
     foreach($plugins as $plugin){
 
         //Chaque élément de plugin est une donnée de plugin
@@ -63,4 +62,14 @@ foreach ($list as $item) {
             echo $parameter->nodeName . ' : ' . $parameter->nodeValue . PHP_EOL;
         }
     }
+}
+
+
+echo "Selectionne le noeud 'theme' dont l'attribut name vaut atelierduboisdor, enfant du noeud courant" . PHP_EOL;
+
+//Selectionne le noeud 'theme' dont l'attribut name vaut atelierduboisdor, enfant du noeud courant
+$plugins_list = $xpath->query('//ns:theme_official_plugins/ns:theme[@name="atelierduboisdor"]/ns:plugin');
+foreach($plugins_list as $plugin){
+    echo $plugin->getElementsByTagName('name')->item(0)->nodeValue . PHP_EOL;
+    echo $plugin->getElementsByTagName('description')->item(0)->nodeValue . PHP_EOL;
 }
