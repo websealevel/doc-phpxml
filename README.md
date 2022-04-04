@@ -32,6 +32,8 @@ Exemple avec la node root qui dispose d'un attribut namespace `xmlns`, général
 
 ~~~xml
 <root xmlns="mon-namespace">
+    <foo></foo>
+</root>
 ~~~
 
 ~~~php
@@ -39,10 +41,10 @@ $dom = new DOMDocument();
 $dom->load($xml_file);
 $xpath = new DOMXpath($dom);
 $xpath->registerNamespace('ns', 'mon-namespace')
-$results = $xpath->query('//ns:root/ns:child');
+$results = $xpath->query('//ns:root/ns:foo');
 ~~~
 
-Le résultat renvoyé par `$xpath->query()` est un objet [DOMElement](https://www.php.net/manual/en/class.domelement.php).
+Le résultat renvoyé par `$xpath->query()` est une [DOMNodeList](), chaque item de la liste est un [DOMElement](https://www.php.net/manual/en/class.domelement.php).
 
 
 ## Ressources

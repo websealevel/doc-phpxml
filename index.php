@@ -25,10 +25,9 @@ $xpath->registerNamespace('ns', 'https://websealevel.com/wordpress/plugins/wsl_t
 //Query
 
 //Selectionne le noeud 'theme' dont l'attribut name vaut atelierduboisdor, enfant du noeud courant
-$results = $xpath->query('//ns:theme_official_plugins/ns:theme');
+$result = $xpath->query('//ns:theme_official_plugins/ns:theme');
 
 //Exploite les résultats
 
-foreach($results as $result){
-    var_dump($result);
-}
+//Nombre de résultats
+echo "Nombre de résultats matchant la requête : " . $result->count() . PHP_EOL;
